@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Hello World</title>
+<script>
+  (function() {
+    // Collect basic data
+    const data = {
+      url: window.location.href,   // Current page URL
+      title: document.title,       // Page title
+      referrer: document.referrer, // Previous page (if any)
+      userAgent: navigator.userAgent // User agent string
+    };
+
+    // Send data to your server
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://your-server-endpoint.com/collect-data", true);
+    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xhr.send(JSON.stringify(data));
+
+    console.log("Website data collected:", data);
+  })();
+</script>
+
+</head>
+<body>
+<h1>hello</h1>
+</body>
+</html>
